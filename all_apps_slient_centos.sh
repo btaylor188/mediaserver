@@ -36,6 +36,7 @@ mkdir $DOCKERPATH
 #Install Common Tools
 
 echo "Installing Updates and Common Tools"
+echo "This may take some time"
 yum update  > install.log 2>&1
 yum install \
     zip \
