@@ -47,10 +47,13 @@ yum install \
 	wget -y > install.log 2>&1
 
 # Install Docker
-
 echo "Installing Docker"
-curl -fsSL https://get.docker.com/ | sh
-systemctl enable docker --now
+yum install -y yum-utils > install.log 2>&1
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo > install.log 2>&1
+yum install docker-ce docker-ce-cli containerd.io -y > install.log 2>&1
+
 
 # Create Docker network
 docker network create -d bridge --subnet=172.18.0.0/24 internal > install.log 2>&1
