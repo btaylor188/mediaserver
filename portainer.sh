@@ -4,7 +4,7 @@ echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 
 echo "Installing Portainer"
-
+docker network create -d bridge --subnet=172.18.0.0/24 internal
 
 docker run -d \
 --name=portainer  \
@@ -30,3 +30,4 @@ docker run -d \
 -l "traefik.port"="9000" \
 --restart=always \
 portainer/portainer
+docker network connect internal portainer
