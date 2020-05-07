@@ -34,4 +34,6 @@ docker run -d \
 -l "traefik.port"="8989" \
 --restart=always \
 linuxserver/sonarr:latest
+
+docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal sonarr
