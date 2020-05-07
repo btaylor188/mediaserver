@@ -37,6 +37,7 @@ mkdir $DOCKERPATH
 #Install Common Tools
 
 echo "Installing Updates and Common Tools"
+echo "This may take some time"
 apt update  > install.log 2>&1
 apt install \
     zip \
