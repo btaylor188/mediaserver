@@ -1,3 +1,5 @@
+echo "What is the domain name?"
+read DOMAINNAME
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 echo "Installing Organizr"
