@@ -515,6 +515,7 @@ thomseddon/traefik-forward-auth > install.log 2>&1
 docker network connect internal oauth > install.log 2>&1
 
 #Install PLex
+echo "Installing Plex"
 docker run \
 -d \
 --name plex \
