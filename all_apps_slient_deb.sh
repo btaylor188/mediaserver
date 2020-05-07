@@ -425,7 +425,7 @@ docker run -d \
 
 echo "Installing Traefik"
 ## create toml file
-mkdir $DOCKERPATH/traefik
+mkdir $DOCKERPATH/traefik > install.log 2>&1
 cat > $DOCKERPATH/traefik/traefik.toml << EOF1
 ################################################################################
 
