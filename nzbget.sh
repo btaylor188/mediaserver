@@ -31,3 +31,5 @@ docker run -d \
 -l "traefik.port"="6789" \
 --restart=always \
 linuxserver/nzbget:latest
+docker network create -d bridge --subnet=172.18.0.0/24 internal
+docker network connect internal deluge
