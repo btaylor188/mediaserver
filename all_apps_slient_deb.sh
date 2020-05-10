@@ -332,8 +332,8 @@ echo "Installing HandBrake"
 -v /etc/localtime:/etc/localtime \
 -v $DOCKERPATH/handbrake/config:/config \
 -v /mnt:/mnt \
--v /mnt/docker/handbrake/watch/my265:/watch \
--v /mnt/docker/handbrake/complete:/output  \
+-v $DOCKERPATH/handbrake/watch/my265:/watch \
+-v $DOCKERPATH/handbrake/complete:/output  \
 -l "traefik.enable"="true" \
 -l "traefik.frontend.auth.forward.address"="http://oauth:4181" \
 -l "traefik.frontend.headers.SSLHost"="$DOMAINNAME" \
