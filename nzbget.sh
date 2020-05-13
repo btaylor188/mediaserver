@@ -4,6 +4,8 @@ read DOMAINNAME
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 
+docker kill nzbget
+docker rm nzbget
 docker run -d \
 --name=nzbget \
 -p 127.0.0.1:6789:6789 \
