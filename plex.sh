@@ -3,6 +3,8 @@ echo "What is the domain name?"
 read DOMAINNAME
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
+echo "Enter path for Media.  ie. /mnt/Media"
+read MEDIAPATH
 #Install PLex
 docker run \
 -d \
@@ -33,7 +35,7 @@ docker run \
 -l "traefik.port"="32400" \
 -v $DOCKERPATH/plex/database:/config \
 -v /dev/shm:/transcode \
--v $DOCKERPATH/plex:/mnt/unionfs/Media \
+-v $MEDIAPATH:/mnt/unionfs/Media \
 plexinc/pms-docker
 
 docker network connect internal plex
