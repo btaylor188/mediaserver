@@ -4,6 +4,8 @@ read DOMAINNAME
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 echo "Installing Organizr"
+docker kill organizr
+docker rm organizr
 docker run -d \
 --name=organizr \
 -p 127.0.0.1:8040:80 \
