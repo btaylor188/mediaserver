@@ -6,7 +6,8 @@ read DOCKERPATH
 
 echo "Installing Portainer"
 docker network create -d bridge --subnet=172.18.0.0/24 internal
-
+docker kill portainer
+docker rm portainer
 docker run -d \
 --name=portainer  \
 -p 127.0.0.1:9000:9000 \
