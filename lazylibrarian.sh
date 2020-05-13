@@ -5,6 +5,8 @@ echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 # Install LazyLibrarian
 echo "Installing LazyLibrarian"
+docker kill lazylibrarian
+docker rm lazylibrarian
 docker run -d \
 --name=lazylibrarian \
 -p 127.0.0.1:5299:5299 \
