@@ -41,15 +41,9 @@ done
 ###############################
 
 ######### Watchtower #############
+echo "Installing Watchtower"
+sh ./watchtower.sh
 
-while true; do
-    read -p "Install Watchtower?" yn
-    case $yn in
-        [Yy]* ) sh ./watchtower.sh ; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 
 ###############################
 
