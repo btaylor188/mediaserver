@@ -32,7 +32,7 @@ read DOCKERPATH
 while true; do
     read -p "Install Docker?" yn
     case $yn in
-        [Yy]* ) sh ./docker.sh ; break;;
+        [Yy]* ) sh ./components/docker.sh ; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
@@ -42,7 +42,7 @@ done
 
 ######### Watchtower #############
 echo "Installing Watchtower"
-sh ./watchtower.sh
+sh ./components/watchtower.sh
 
 ###############################
 
@@ -51,7 +51,20 @@ sh ./watchtower.sh
 while true; do
     read -p "Install Traefik?" yn
     case $yn in
-        [Yy]* ) sh ./traefik.sh ; break;;
+        [Yy]* ) sh ./components/traefik.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### oAuth #############
+
+while true; do
+    read -p "Install oAuth?" yn
+    case $yn in
+        [Yy]* ) sh ./components/oauth.sh ; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
@@ -60,14 +73,54 @@ done
 ###############################
 
 
+######### Plex #############
 
+while true; do
+    read -p "Install Plex?" yn
+    case $yn in
+        [Yy]* ) sh ./components/plex.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
+###############################
 
-echo "Install Plex?"
-read -p "Hardware Transcoding? Nvidia, Intel, nOne?" choice
-case "$choice" in 
-  o|O) sh ./plex.sh;;
-  n|N ) sh ./plex_nvenc.sh;;
-  i|I ) sh ./plex_intel.sh;;
-  * ) echo "invalid";;
-esac
+######### NZBGet #############
+
+while true; do
+    read -p "Install NZBGet?" yn
+    case $yn in
+        [Yy]* ) sh ./components/nzbget.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Deluge #############
+
+while true; do
+    read -p "Install Deluge?" yn
+    case $yn in
+        [Yy]* ) sh ./components/deluge.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Deluge #############
+
+while true; do
+    read -p "Install Deluge?" yn
+    case $yn in
+        [Yy]* ) sh ./components/deluge.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
