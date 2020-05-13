@@ -6,6 +6,8 @@ read DOCKERPATH
 echo "Installing Deluge
 # Install Sonarr
 echo "Installing Sonarr"
+docker kill sonarr
+docker rm sonarr
 docker run -d \
 --name=sonarr \
 -p 127.0.0.1:8989:8989 \
