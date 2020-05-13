@@ -33,7 +33,7 @@ while true; do
     read -p "Install Docker?" yn
     case $yn in
         [Yy]* ) sh ./components/docker.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -52,7 +52,7 @@ while true; do
     read -p "Install Traefik?" yn
     case $yn in
         [Yy]* ) sh ./components/traefik.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -65,7 +65,7 @@ while true; do
     read -p "Install oAuth?" yn
     case $yn in
         [Yy]* ) sh ./components/oauth.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -78,7 +78,7 @@ while true; do
     read -p "Install Portainer?" yn
     case $yn in
         [Yy]* ) sh ./components/portainer.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -91,111 +91,111 @@ while true; do
     read -p "Install Plex?" yn
     case $yn in
         [Yy]* ) sh ./components/plex.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### NZBGet #############
+######### NZBGet ##############
 
 while true; do
     read -p "Install NZBGet?" yn
     case $yn in
         [Yy]* ) sh ./components/nzbget.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### Deluge #############
+######### Deluge ##############
 
 while true; do
     read -p "Install Deluge?" yn
     case $yn in
         [Yy]* ) sh ./components/deluge.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### Organizr #############
+######### Organizr ############
 
 while true; do
     read -p "Install Organizr?" yn
     case $yn in
         [Yy]* ) sh ./components/organizr.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### Sonar #############
+######### Sonar ###############
 
 while true; do
     read -p "Install Sonarr?" yn
     case $yn in
         [Yy]* ) sh ./components/sonarr.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### Radarr #############
+######### Radarr ##############
 
 while true; do
     read -p "Install Radarr?" yn
     case $yn in
         [Yy]* ) sh ./components/radarr.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### Bazarr #############
+######### Bazarr ##############
 
 while true; do
     read -p "Install Bazarr?" yn
     case $yn in
         [Yy]* ) sh ./components/bazarr.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### Lazy Librarian #############
+###### Lazy Librarian #########
 
 while true; do
     read -p "Install Lazy Librarian?" yn
     case $yn in
         [Yy]* ) sh ./components/lazylibrarian.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 ###############################
 
-######### Speedtest #############
+######## Speedtest ############
 
 while true; do
     read -p "Install Speedtest?" yn
     case $yn in
         [Yy]* ) sh ./components/speedtest.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -208,7 +208,7 @@ while true; do
     read -p "Install Handbrake?" yn
     case $yn in
         [Yy]* ) sh ./components/handbrake.sh ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
