@@ -5,7 +5,9 @@ echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 # Install Speedtest
 echo "Installing Speedtest"
-
+docker kill speedtest
+docker rm speedtest
+docker run -d \
 --name=speedtest \
 -p 127.0.0.1:8223:8223 \
 -e PUID=1000 \
