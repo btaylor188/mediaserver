@@ -1,9 +1,5 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
-# Install Bazarr
+
 echo "Installing Bazarr"
 docker kill bazarr
 docker rm bazarr
@@ -34,5 +30,4 @@ docker run -d \
 -l "traefik.port"="6767" \
 --restart=always \
 linuxserver/bazarr:latest
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal bazarr

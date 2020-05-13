@@ -1,8 +1,5 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
+
 echo "Installing Organizr"
 docker kill organizr
 docker rm organizr
@@ -32,5 +29,4 @@ docker run -d \
 -l "traefik.port"="80" \
 --restart=always \
 organizrtools/organizr-v2:latest
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal organizr

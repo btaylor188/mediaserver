@@ -1,16 +1,12 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
-echo "Enter path for Media.  ie. /mnt/Media"
-read MEDIAPATH
-#Install PLex
+
+#Install Plex
 docker kill plex
 docker rm plex
 docker run \
 -d \
 --name plex \
+--runtime=nvidia \
 --device /dev/dri:/dev/dri \
 -p 32400:32400/tcp \
 -p 3005:3005/tcp \
@@ -22,6 +18,8 @@ docker run \
 -p 32413:32413/udp \
 -p 32414:32414/udp \
 -e TZ=America/Denver \
+-e NVIDIA_VISIBLE_DEVICES=all \
+-e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
 -l "traefik.enable"="true" \
 -l "traefik.frontend.auth.forward.address"="http://oauth:4181" \
 -l "traefik.frontend.headers.SSLHost"="$DOMAINNAME" \

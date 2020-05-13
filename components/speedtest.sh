@@ -1,8 +1,5 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
+
 # Install Speedtest
 echo "Installing Speedtest"
 docker kill speedtest
@@ -30,5 +27,4 @@ docker run -d \
 -l "traefik.port"="8223" \
 --restart=always \
 adolfintel/speedtest
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal speedtest

@@ -1,29 +1,4 @@
 #! /bin/bash
-echo "What is the domain name?"
-read DOMAINNAME
-
-echo "Enter your GoDaddy API Key"
-read DOMAINAPIKEY
-
-echo "Enter your GoDaddy API Secret"
-read DOMAINAPISECRET
-
-echo "Enter your Google OAuth Client ID"
-read OAUTHCLIENT
-
-echo "Enter your Google OAuth Secret"
-read OAUTHSECRET
-
-echo "Enter comma separated list of authorized users.  ie. user1@gmail.com,user2@gmail.com,"
-read AUTHORIZEDUSERS
-
-echo "Enter Certificate Contact Email Address"
-read CERTCONTACT
-
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
-
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 # Traefik
 
 echo "Installing Traefik"

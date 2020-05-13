@@ -1,16 +1,11 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
 
 echo "Installing Portainer"
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker kill portainer
 docker rm portainer
 docker run -d \
 --name=portainer  \
--p 127.0.0.1:9000:9000 \
+-p 9000:9000 \
 --privileged \
 --entrypoint="/portainer" \
 -e PUID=1000 \

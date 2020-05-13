@@ -1,9 +1,5 @@
 #! /bin/bash
 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
 echo "Location of watch folder?"
 read WATCH
 echo "Location of output folder?"
@@ -14,10 +10,13 @@ docker rm handbrake
 
 docker run -d -t \
 --name=handbrake \
--p 5800:5800 \
+--runtime=nvidia \
+-p 127.0.0.1:5800:5800 \
 -v $DOCKERPATH:/config \
 -v $WATCH:/watch:rw \
 -v $OUTPUT:/output:rw \
+-e NVIDIA_VISIBLE_DEVICES=all \
+-e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
 -l "traefik.enable"="true" \
 -l "traefik.frontend.auth.forward.address"="http://oauth:4181" \
 -l "traefik.frontend.headers.SSLHost"="$DOMAINNAME" \
@@ -34,5 +33,4 @@ docker run -d -t \
 --gpus all \
 zocker160/handbrake-nvenc:latest
 
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal handbrake

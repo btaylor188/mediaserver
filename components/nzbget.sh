@@ -1,8 +1,4 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
 
 docker kill nzbget
 docker rm nzbget
@@ -34,5 +30,4 @@ docker run -d \
 -l "traefik.port"="6789" \
 --restart=always \
 linuxserver/nzbget:latest
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal nzbget

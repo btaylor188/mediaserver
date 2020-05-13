@@ -1,8 +1,4 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
 # Install LazyLibrarian
 echo "Installing LazyLibrarian"
 docker kill lazylibrarian
@@ -35,5 +31,4 @@ docker run -d \
 -l "traefik.port"="5299" \
 --restart=always \
 linuxserver/lazylibrarian:latest
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal lazylibrarian

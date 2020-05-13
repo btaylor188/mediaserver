@@ -1,9 +1,5 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
-echo "Installing Deluge"
+
 # Install Radarr
 
 echo "Installing Radarr"
@@ -37,5 +33,4 @@ docker run -d \
 -l "traefik.port"="7878" \
 --restart=always \
 linuxserver/radarr:latest
-docker network create -d bridge --subnet=172.18.0.0/24 internal
 docker network connect internal radarr
