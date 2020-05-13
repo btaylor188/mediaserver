@@ -7,6 +7,8 @@ echo "Installing Deluge"
 # Install Radarr
 
 echo "Installing Radarr"
+docker kill radarr
+docker rm radarr
 docker run -d \
 --name=radarr \
 -p 127.0.0.1:7878:7878 \
