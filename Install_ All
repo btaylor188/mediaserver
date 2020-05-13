@@ -1,0 +1,12 @@
+#! /bin/bash
+
+
+
+echo "Install Plex?"
+read -p "Hardware Transcoding? Nvidia, Intel, nOne?" choice
+case "$choice" in 
+  o|O) sh ./plex.sh;;
+  n|N ) sh ./plex_nvenc.sh;;
+  i|I ) sh ./plex_intel.sh;;
+  * ) echo "invalid";;
+esac
