@@ -4,7 +4,8 @@ read DOMAINNAME
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 echo "Installing Deluge"
-
+docker kill deluge
+docker rm deluge
 docker run -d \
 --name=deluge \
 -p 127.0.0.1:8112:8112 \
