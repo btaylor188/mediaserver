@@ -1,6 +1,12 @@
 #! /bin/bash 
 
 #Install Plex
+echo" Installing Plex"
+echo "###############################################################"
+echo "### Nvidia Hardware Transcoding Requires additional scripts ###"
+echo "### located in the addons folder. #############################"
+echo "###############################################################"
+
 docker kill plex > plex.log 2>&1
 docker rm plex > plex.log 2>&1
 docker run \
