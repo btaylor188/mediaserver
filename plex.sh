@@ -6,6 +6,8 @@ read DOCKERPATH
 echo "Enter path for Media.  ie. /mnt/Media"
 read MEDIAPATH
 #Install PLex
+docker kill plex
+docker rm plex
 docker run \
 -d \
 --name plex \
