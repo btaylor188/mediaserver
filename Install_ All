@@ -72,6 +72,18 @@ done
 
 ###############################
 
+######### Portainer #############
+
+while true; do
+    read -p "Install Portainer?" yn
+    case $yn in
+        [Yy]* ) sh ./components/portainer.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
 
 ######### Plex #############
 
@@ -112,12 +124,90 @@ done
 
 ###############################
 
-######### Deluge #############
+######### Organizr #############
 
 while true; do
-    read -p "Install Deluge?" yn
+    read -p "Install Organizr?" yn
     case $yn in
-        [Yy]* ) sh ./components/deluge.sh ; break;;
+        [Yy]* ) sh ./components/organizr.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Sonar #############
+
+while true; do
+    read -p "Install Sonarr?" yn
+    case $yn in
+        [Yy]* ) sh ./components/sonarr.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Radarr #############
+
+while true; do
+    read -p "Install Radarr?" yn
+    case $yn in
+        [Yy]* ) sh ./components/radarr.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Bazarr #############
+
+while true; do
+    read -p "Install Bazarr?" yn
+    case $yn in
+        [Yy]* ) sh ./components/bazarr.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Lazy Librarian #############
+
+while true; do
+    read -p "Install Lazy Librarian?" yn
+    case $yn in
+        [Yy]* ) sh ./components/lazylibrarian.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Speedtest #############
+
+while true; do
+    read -p "Install Speedtest?" yn
+    case $yn in
+        [Yy]* ) sh ./components/speedtest.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Handbrake w/ NVENC #############
+
+while true; do
+    read -p "Install Handbrake?" yn
+    case $yn in
+        [Yy]* ) sh ./components/handbrake.sh ; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
