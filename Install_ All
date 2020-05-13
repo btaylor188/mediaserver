@@ -1,4 +1,72 @@
 #! /bin/bash
+####### Define Variables ######
+echo "What is the domain name?"
+read DOMAINNAME
+
+echo "Enter your GoDaddy API Key"
+read DOMAINAPIKEY
+
+echo "Enter your GoDaddy API Secret"
+read DOMAINAPISECRET
+
+echo "Enter your Google OAuth Client ID"
+read OAUTHCLIENT
+
+echo "Enter your Google OAuth Secret"
+read OAUTHSECRET
+
+echo "Enter comma separated list of authorized users.  ie. user1@gmail.com,user2@gmail.com,"
+read AUTHORIZEDUSERS
+
+echo "Enter Certificate Contact Email Address"
+read CERTCONTACT
+
+echo "Enter path for Docker data.  ie. /mnt/docker"
+read DOCKERPATH
+
+
+###############################
+
+
+##########   Docker ###########
+while true; do
+    read -p "Install Docker?" yn
+    case $yn in
+        [Yy]* ) sh ./docker.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Watchtower #############
+
+while true; do
+    read -p "Install Watchtower?" yn
+    case $yn in
+        [Yy]* ) sh ./watchtower.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+######### Traefik #############
+
+while true; do
+    read -p "Install Traefik?" yn
+    case $yn in
+        [Yy]* ) sh ./traefik.sh ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
+
 
 
 
