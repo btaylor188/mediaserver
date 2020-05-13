@@ -5,7 +5,9 @@ echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 # Install Bazarr
 echo "Installing Bazarr"
- docker run -d \
+docker kill bazarr
+docker rm bazarr
+docker run -d \
 --name=bazarr \
 -p 127.0.0.1:6767:6767 \
 -e PUID=1000 \
