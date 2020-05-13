@@ -1,8 +1,8 @@
 #! /bin/bash 
 
 #Install Plex
-docker kill plex
-docker rm plex
+docker kill plex > plex.log 2>&1
+docker rm plex > plex.log 2>&1
 docker run \
 -d \
 --name plex \
@@ -36,7 +36,7 @@ docker run \
 -v $DOCKERPATH/plex/database:/config \
 -v /dev/shm:/transcode \
 -v $MEDIAPATH:/mnt/unionfs/Media \
-plexinc/pms-docker
+plexinc/pms-docker > plex.log 2>&1
 
-docker network connect internal plex
+docker network connect internal plex > plex.log 2>&1
 

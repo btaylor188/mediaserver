@@ -1,11 +1,8 @@
 #! /bin/bash 
-echo "What is the domain name?"
-read DOMAINNAME
-echo "Enter path for Docker data.  ie. /mnt/docker"
-read DOCKERPATH
+
 echo "Installing Deluge"
-docker kill deluge
-docker rm deluge
+docker kill deluge > deluge.log 2>&1
+docker rm deluge > deluge.log 2>&1
 docker run -d \
 --name=deluge \
 -p 127.0.0.1:8112:8112 \
@@ -35,5 +32,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:deluge.$DOMAINNAME" \
 -l "traefik.port"="8112" \
 --restart=always \
-linuxserver/deluge
-docker network connect internal deluge
+linuxserver/deluge > deluge.log 2>&1
+docker network connect internal deluge > deluge.log 2>&1

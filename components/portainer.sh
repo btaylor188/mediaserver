@@ -1,8 +1,8 @@
 #! /bin/bash 
 
 echo "Installing Portainer"
-docker kill portainer
-docker rm portainer
+docker kill portainer > portainer.log 2>&1
+docker rm portainer > portainer.log 2>&1
 docker run -d \
 --name=portainer  \
 -p 9000:9000 \
@@ -26,5 +26,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:portainer.$DOMAINNAME" \
 -l "traefik.port"="9000" \
 --restart=always \
-portainer/portainer
-docker network connect internal portainer
+portainer/portainer > portainer.log 2>&1
+docker network connect internal portainer > portainer.log 2>&1

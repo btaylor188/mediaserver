@@ -5,8 +5,8 @@ read WATCH
 echo "Location of output folder?"
 read OUTPUT
 
-docker kill handbrake
-docker rm handbrake
+docker kill handbrake > handbrake.log 2>&1
+docker rm handbrake > handbrake.log 2>&1
 
 docker run -d -t \
 --name=handbrake \
@@ -31,6 +31,6 @@ docker run -d -t \
 -l "traefik.frontend.rule"="Host:handbrake.$DOMAINNAME,handbrake.$DOMAINNAME" \
 -l "traefik.port"="5800" \
 --gpus all \
-zocker160/handbrake-nvenc:latest
+zocker160/handbrake-nvenc:latest > handbrake.log 2>&1
 
-docker network connect internal handbrake
+docker network connect internal handbrake > handbrake.log 2>&1

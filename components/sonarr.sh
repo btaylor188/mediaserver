@@ -2,8 +2,8 @@
 echo "Installing Deluge
 # Install Sonarr
 echo "Installing Sonarr"
-docker kill sonarr
-docker rm sonarr
+docker kill sonarr > sonarr.log 2>&1
+docker rm sonarr > sonarr.log 2>&1
 docker run -d \
 --name=sonarr \
 -p 127.0.0.1:8989:8989 \
@@ -32,6 +32,6 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:sonarr.$DOMAINNAME,sonarr.$DOMAINNAME" \
 -l "traefik.port"="8989" \
 --restart=always \
-linuxserver/sonarr:latest
+linuxserver/sonarr:latest > sonarr.log 2>&1
 
-docker network connect internal sonarr
+docker network connect internal sonarr > sonarr.log 2>&1

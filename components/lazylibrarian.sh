@@ -1,8 +1,8 @@
 #! /bin/bash 
 # Install LazyLibrarian
 echo "Installing LazyLibrarian"
-docker kill lazylibrarian
-docker rm lazylibrarian
+docker kill lazylibrarian > lazylib.log 2>&1
+docker rm lazylibrarian > lazylib.log 2>&1
 docker run -d \
 --name=lazylibrarian \
 -p 127.0.0.1:5299:5299 \
@@ -30,5 +30,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:lazylibrarian.$DOMAINNAME,lazylibrarian.$DOMAINNAME" \
 -l "traefik.port"="5299" \
 --restart=always \
-linuxserver/lazylibrarian:latest
-docker network connect internal lazylibrarian
+linuxserver/lazylibrarian:latest > lazylib.log 2>&1
+docker network connect internal lazylibrarian > lazylib.log 2>&1

@@ -1,8 +1,8 @@
 #! /bin/bash 
 
 echo "Installing Organizr"
-docker kill organizr
-docker rm organizr
+docker kill organizr > organizr.log 2>&1
+docker rm organizr > organizr.log 2>&1
 docker run -d \
 --name=organizr \
 -p 127.0.0.1:8040:80 \
@@ -28,5 +28,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:organizr.$DOMAINNAME,$DOMAINNAME" \
 -l "traefik.port"="80" \
 --restart=always \
-organizrtools/organizr-v2:latest
-docker network connect internal organizr
+organizrtools/organizr-v2:latest > organizr.log 2>&1
+docker network connect internal organizr > organizr.log 2>&1

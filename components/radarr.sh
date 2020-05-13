@@ -3,8 +3,8 @@
 # Install Radarr
 
 echo "Installing Radarr"
-docker kill radarr
-docker rm radarr
+docker kill radarr > radarr.log 2>&1
+docker rm radarr > radarr.log 2>&1
 docker run -d \
 --name=radarr \
 -p 127.0.0.1:7878:7878 \
@@ -32,5 +32,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:radarr.$DOMAINNAME,radarr.$DOMAINNAME" \
 -l "traefik.port"="7878" \
 --restart=always \
-linuxserver/radarr:latest
-docker network connect internal radarr
+linuxserver/radarr:latest > radarr.log 2>&1
+docker network connect internal radarr > radarr.log 2>&1

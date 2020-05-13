@@ -2,8 +2,8 @@
 
 # Install Speedtest
 echo "Installing Speedtest"
-docker kill speedtest
-docker rm speedtest
+docker kill speedtest > speedtest.log 2>&1
+docker rm speedtest > speedtest.log 2>&1
 docker run -d \
 --name=speedtest \
 -p 127.0.0.1:8223:8223 \
@@ -26,5 +26,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:speedtest.$DOMAINNAME,speedtest.$DOMAINNAME" \
 -l "traefik.port"="8223" \
 --restart=always \
-adolfintel/speedtest
-docker network connect internal speedtest
+adolfintel/speedtest > speedtest.log 2>&1
+docker network connect internal speedtest > speedtest.log 2>&1

@@ -1,8 +1,8 @@
 #! /bin/bash 
 
 echo "Installing Bazarr"
-docker kill bazarr
-docker rm bazarr
+docker kill bazarr > bazarr.log 2>&1
+docker rm bazarr > bazarr.log 2>&1
 docker run -d \
 --name=bazarr \
 -p 127.0.0.1:6767:6767 \
@@ -29,5 +29,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:bazarr.$DOMAINNAME" \
 -l "traefik.port"="6767" \
 --restart=always \
-linuxserver/bazarr:latest
-docker network connect internal bazarr
+linuxserver/bazarr:latest  > bazarr.log 2>&1
+docker network connect internal bazarr > bazarr.log 2>&1

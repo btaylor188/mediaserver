@@ -1,7 +1,7 @@
 #! /bin/bash 
 
-docker kill nzbget
-docker rm nzbget
+docker kill nzbget > nzbget.log 2>&1
+docker rm nzbget > nzbget.log 2>&1
 docker run -d \
 --name=nzbget \
 -p 127.0.0.1:6789:6789 \
@@ -29,5 +29,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:nzbget.$DOMAINNAME,nzbget.$DOMAINNAME" \
 -l "traefik.port"="6789" \
 --restart=always \
-linuxserver/nzbget:latest
-docker network connect internal nzbget
+linuxserver/nzbget:latest > nzbget.log 2>&1
+docker network connect internal nzbget > nzbget.log 2>&1

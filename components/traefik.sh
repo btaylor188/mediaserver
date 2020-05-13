@@ -71,9 +71,9 @@ docker run -d \
 -v traefiktmp:/tmp \
 --network=internal \
 --restart=always \
-traefik:v1.7 
+traefik:v1.7  > traefik.log 2>&1
 
-docker network connect bridge traefik 
+docker network connect bridge traefik  > traefik.log 2>&1
 
 #Install OAuth
 
@@ -100,6 +100,6 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:oauth.$DOMAINNAME" \
 -l "traefik.port"="4181" \
 --restart=always \
-thomseddon/traefik-forward-auth
+thomseddon/traefik-forward-auth > traefik.log 2>&1
 
-docker network connect internal oauth
+docker network connect internal oauth > traefik.log 2>&1
