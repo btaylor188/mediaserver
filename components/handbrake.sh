@@ -31,6 +31,7 @@ docker run -d -t \
 -l "traefik.frontend.rule"="Host:handbrake.$DOMAINNAME,handbrake.$DOMAINNAME" \
 -l "traefik.port"="5800" \
 --gpus all \
+--restart=always \
 zocker160/handbrake-nvenc:latest > handbrake.log 2>&1
 
 docker network connect internal handbrake > handbrake.log 2>&1

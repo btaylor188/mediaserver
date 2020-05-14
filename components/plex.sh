@@ -47,6 +47,7 @@ docker run \
 -v $DOCKERPATH/plex/database:/config \
 -v /dev/shm:/transcode \
 -v $MEDIAPATH:/mnt/unionfs/Media \
+--restart=always \
 plexinc/pms-docker > plex.log 2>&1
 
 docker network connect internal plex > plex.log 2>&1
