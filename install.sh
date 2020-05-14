@@ -24,6 +24,14 @@ read CERTCONTACT
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 
+export DOMAINNAME
+export DOMAINAPIKEY
+export DOMAINAPISECRET
+export OAUTHSECRET
+export OAUTHCLIENT
+export AUTHORIZEDUSERS
+export CERTCONTACT
+export DOCKERPATH
 
 ###############################
 
