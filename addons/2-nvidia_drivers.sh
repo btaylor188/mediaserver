@@ -16,7 +16,7 @@ sudo yum install kernel-devel dkms gcc make perl bin utils linux-source nvidia-d
 sudo rm -rf /opt/nvidia
 sudo mkdir /opt/nvidia && cd /opt/nvidia
 wget https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run
-sudo chmod +x /opt/nvidia/NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-5.3.18-1-pve/ 
+sudo chmod +x /opt/nvidia/NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-5.4.34-1-pve/ 
 sudo ./NVIDIA-Linux-x86_64-440.82.run
 
 echo "#################################################"
