@@ -7,8 +7,8 @@ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update
 sudo apt-get install gcc binutils make linux-source pve-headers nvidia-docker2 nvidia-container-runtime -y
-sudo apt install linux-headers-$(uname -r)
-sudo apt install pve-headers
+sudo apt install linux-headers-$(uname -r) -yum
+sudo apt install pve-headers -y
 sudo yum install kernel-devel dkms gcc make perl bin utils linux-source nvidia-docker2 nvidia-container-runtime -y
 
 
@@ -16,7 +16,7 @@ sudo yum install kernel-devel dkms gcc make perl bin utils linux-source nvidia-d
 sudo rm -rf /opt/nvidia
 sudo mkdir /opt/nvidia && cd /opt/nvidia
 wget https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run
-sudo chmod +x /opt/nvidia/NVIDIA-Linux-x86_64-440.82.run
+sudo chmod +x /opt/nvidia/NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-5.3.18-1-pve/ 
 sudo ./NVIDIA-Linux-x86_64-440.82.run
 
 echo "#################################################"
