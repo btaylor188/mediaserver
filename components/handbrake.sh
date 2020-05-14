@@ -17,6 +17,8 @@ docker run -d -t \
 -v $OUTPUT:/output:rw \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
+-e AUTOMATED_CONVERSION_PRESET="myh265" \
+-e AUTOMATED_CONVERSION_FORMAT=mkv \
 -l "traefik.enable"="true" \
 -l "traefik.frontend.auth.forward.address"="http://oauth:4181" \
 -l "traefik.frontend.headers.SSLHost"="$DOMAINNAME" \
