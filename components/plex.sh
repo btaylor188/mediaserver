@@ -42,7 +42,7 @@ docker run \
 -l "traefik.frontend.headers.contentTypeNosniff"="true" \
 -l "traefik.frontend.headers.customResponseHeaders"="X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex" \
 -l "traefik.frontend.headers.forceSTSHeader"="true" \
--l "traefik.frontend.rule"="Host:portainer.$DOMAINNAME" \
+-l "traefik.frontend.rule"="Host:plex.$DOMAINNAME" \
 -l "traefik.port"="32400" \
 -v $DOCKERPATH/plex/database:/config \
 -v /dev/shm:/transcode \
