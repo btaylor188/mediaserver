@@ -8,6 +8,7 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.li
 sudo apt-get update
 sudo apt-get install gcc binutils make linux-source pve-headers nvidia-docker2 nvidia-container-runtime -y
 sudo apt install linux-headers-$(uname -r) -yum
+sudo apt install pve-headers -y
 sudo yum install kernel-devel dkms gcc make perl bin utils linux-source nvidia-docker2 nvidia-container-runtime -y
 
 
@@ -16,7 +17,7 @@ sudo rm -rf /opt/nvidia
 sudo mkdir /opt/nvidia && cd /opt/nvidia
 sudo wget https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run
 sudo chmod +x /opt/nvidia/NVIDIA-Linux-x86_64-440.82.run
-sudo ./NVIDIA-Linux-x86_64-440.82.run
+sudo ./NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-5.4.34-1-pve/ 
 
 echo "#################################################"
 echo "########## Please reboot to complete ############"
