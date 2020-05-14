@@ -30,7 +30,7 @@ pause
 sudo dpkg -i pve-headers-$(uname -r)_$(uname -r | perl -pe '($_)=/([0-9]+([.-][0-9]+)+)/')_amd64.deb
 pause
 sudo chmod +x /opt/nvidia/NVIDIA-Linux-x86_64-440.82.run
-sudo ./NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-5.4.34-1-pve/ 
+sudo ./NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-$(uname -r)/ 
 
 echo "#################################################"
 echo "########## Please reboot to complete ############"
