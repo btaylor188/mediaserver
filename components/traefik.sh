@@ -1,6 +1,6 @@
 #! /bin/bash
 # Traefik
-
+docker network create -d bridge --subnet=172.18.0.0/24  
 echo "Installing Traefik"
 ## create toml file
 mkdir $DOCKERPATH/traefik
