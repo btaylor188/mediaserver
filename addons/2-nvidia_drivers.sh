@@ -6,7 +6,7 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - 
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update
-sudo apt-get install gcc cc binutils make linux-source pve-headers nvidia-docker2 nvidia-container-runtime -y
+sudo apt-get install gcc binutils make linux-source pve-headers nvidia-docker2 nvidia-container-runtime -y
 #sudo apt install linux-headers-$(uname -r)
 sudo yum install kernel-devel dkms gcc make perl bin utils linux-source nvidia-docker2 nvidia-container-runtime -y
 
