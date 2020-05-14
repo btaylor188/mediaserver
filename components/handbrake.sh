@@ -12,7 +12,7 @@ docker run -d -t \
 --name=handbrake \
 --runtime=nvidia \
 -p 127.0.0.1:5800:5800 \
--v $DOCKERPATH:/config \
+-v $DOCKERPATH/handbrake:/config \
 -v $WATCH:/watch:rw \
 -v $OUTPUT:/output:rw \
 -e NVIDIA_VISIBLE_DEVICES=all \
