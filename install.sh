@@ -43,7 +43,6 @@ done
 ###############################
 
 ######### Watchtower #############
-echo "Installing Watchtower"
 sh ./components/watchtower.sh
 
 ###############################

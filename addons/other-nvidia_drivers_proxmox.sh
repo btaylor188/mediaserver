@@ -26,7 +26,7 @@ sudo wget https://international.download.nvidia.com/XFree86/Linux-x86_64/440.82/
 sudo wget http://download.proxmox.com/debian/pve/dists/buster/pvetest/binary-amd64/pve-headers-$(uname -r)_$(uname -r | perl -pe '($_)=/([0-9]+([.-][0-9]+)+)/')_amd64.deb
 sudo dpkg -i pve-headers-$(uname -r)_$(uname -r | perl -pe '($_)=/([0-9]+([.-][0-9]+)+)/')_amd64.deb
 sudo chmod +x /opt/nvidia/NVIDIA-Linux-x86_64-440.82.run
-sudo ./NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-$(uname -r)/ 
+sudo ./NVIDIA-Linux-x86_64-440.82.run --kernel-source-path /usr/src/linux-headers-$(uname -r)/ --glvnd-egl-config-path /usr/include/glvnd
 
 echo "#################################################"
 echo "########## Please reboot to complete ############"

@@ -1,5 +1,5 @@
 #! /bin/bash 
-echo "Installing Deluge
+
 # Install Sonarr
 echo "Installing Sonarr"
 docker kill sonarr > sonarr.log 2>&1
