@@ -23,6 +23,7 @@ read CERTCONTACT
 
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
+sudo mkdir $DOCKERPATH
 
 export DOMAINNAME=$DOMAINNAME
 export DOMAINAPIKEY=$DOMAINAPIKEY
