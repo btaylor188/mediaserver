@@ -6,7 +6,10 @@ echo "###############################################################"
 echo "### Nvidia Hardware Transcoding Requires additional scripts ###"
 echo "### located in the addons folder. #############################"
 echo "###############################################################"
-
+echo "Enter path for Plex Media"
+read MEDIAPATH
+echo "Enter Claim token from plex.tv/claim"
+read PLEXCLAIM
 docker kill plex > plex.log 2>&1
 docker rm plex > plex.log 2>&1
 docker run \
@@ -26,6 +29,7 @@ docker run \
 -e TZ=America/Denver \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -e NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
+-e PLEX_CLAIM=$PLEXCLAIM \
 -l "traefik.enable"="true" \
 -l "traefik.frontend.auth.forward.address"="http://oauth:4181" \
 -l "traefik.frontend.headers.SSLHost"="$DOMAINNAME" \

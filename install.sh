@@ -24,8 +24,6 @@ read CERTCONTACT
 echo "Enter path for Docker data.  ie. /mnt/docker"
 read DOCKERPATH
 
-echo "Enter path for Plex Media"
-read MEDIAPATH
 
 ###############################
 
