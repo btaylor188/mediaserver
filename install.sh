@@ -84,6 +84,19 @@ done
 
 ###############################
 
+######### SABNZB ##############
+
+while true; do
+    read -p "Install SABNZB?" yn
+    case $yn in
+        [Yy]* ) sh ./components/SABNZB.sh ; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
 ######### Deluge ##############
 
 while true; do
