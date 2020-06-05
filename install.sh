@@ -89,7 +89,7 @@ done
 while true; do
     read -p "Install SABNZB?" yn
     case $yn in
-        [Yy]* ) sh ./components/SABNZB.sh ; break;;
+        [Yy]* ) sh ./components/sabnzb.sh ; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
