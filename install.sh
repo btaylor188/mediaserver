@@ -58,6 +58,19 @@ done
 
 ###############################
 
+######### Netdata #############
+
+while true; do
+    read -p "Install Netdata?" yn
+    case $yn in
+        [Yy]* ) sh ./components/netdata.sh ; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
 ######### Plex #############
 
 while true; do
