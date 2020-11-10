@@ -136,6 +136,18 @@ done
 
 ###############################
 
+######### Heimdall ############
+
+while true; do
+    read -p "Install Heimdall?" yn
+    case $yn in
+        [Yy]* ) sh ./components/heimdall.sh ; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
 ######### Sonar ###############
 
 while true; do
