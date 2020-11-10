@@ -1,10 +1,10 @@
 #! /bin/bash 
 
 echo "Installing Heimdall"
-docker kill hemidall > hemidall.log 2>&1
-docker rm hemidall > hemidall.log 2>&1
+docker kill heimdall > heimdall.log 2>&1
+docker rm heimdall > heimdall.log 2>&1
 docker run -d \
---name=hemidall \
+--name=heimdall \
 -p 127.0.0.1:8050:80 \
 -e PUID=1000 \
 -e PGID=1000 \
@@ -12,7 +12,7 @@ docker run -d \
 -e HOME=/root \
 -e TERM=xterm \
 -v /etc/localtime:/etc/localtime \
--v $DOCKERPATH/hemidall:/config \
+-v $DOCKERPATH/heimdall:/config \
 -l "traefik.enable"="true" \
 -l "traefik.frontend.auth.forward.address"="http://oauth:4181" \
 -l "traefik.frontend.headers.SSLHost"="$DOMAINNAME" \
@@ -25,8 +25,8 @@ docker run -d \
 -l "traefik.frontend.headers.customResponseHeaders"="X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex" \
 -l "traefik.frontend.headers.forceSTSHeader"="true" \
 -l "traefik.frontend.headers.frameDeny"="true" \
--l "traefik.frontend.rule"="Host:hemidall.$DOMAINNAME" \
+-l "traefik.frontend.rule"="Host:heimdall.$DOMAINNAME" \
 -l "traefik.port"="80" \
 --restart=always \
-ghcr.io/linuxserver/heimdall > hemidall.log 2>&1
-docker network connect internal hemidall > hemidall.log 2>&1
+ghcr.io/linuxserver/heimdall > heimdall.log 2>&1
+docker network connect internal heimdall > heimdall.log 2>&1
