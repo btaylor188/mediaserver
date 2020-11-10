@@ -25,7 +25,7 @@ docker run -d \
 -l "traefik.frontend.headers.customResponseHeaders"="X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex" \
 -l "traefik.frontend.headers.forceSTSHeader"="true" \
 -l "traefik.frontend.headers.frameDeny"="true" \
--l "traefik.frontend.rule"="Host:hemidall.$DOMAINNAME,$DOMAINNAME" \
+-l "traefik.frontend.rule"="Host:hemidall.$DOMAINNAME" \
 -l "traefik.port"="80" \
 --restart=always \
 ghcr.io/linuxserver/heimdall > hemidall.log 2>&1
