@@ -21,6 +21,7 @@ docker run -d \
 -l "traefik.frontend.headers.forceSTSHeader"="true" \
 -l "traefik.frontend.rule"="Host:homeassistant.$DOMAINNAME,homeassistant.$DOMAINNAME" \
 -l "traefik.port"="8123" \
-homeassistant/home-assistant:stable
+homeassistant/home-assistant:stable > homeassistant.log 2>&1
+
 
 
