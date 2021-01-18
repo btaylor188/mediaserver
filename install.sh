@@ -213,6 +213,19 @@ done
 
 ###############################
 
+######## Home Assistant ############
+
+while true; do
+    read -p "Install Homeassistant?" yn
+    case $yn in
+        [Yy]* ) sh ./components/homeassistant.sh ; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
 ######### Handbrake w/ NVENC #############
 
 while true; do
