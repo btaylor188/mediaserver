@@ -200,6 +200,19 @@ done
 
 ###############################
 
+###### Overseerr #########
+
+while true; do
+    read -p "Install Overseerr?" yn
+    case $yn in
+        [Yy]* ) sh ./components/overseerr.sh ; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
 ######## Speedtest ############
 
 while true; do
