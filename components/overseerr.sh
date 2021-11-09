@@ -26,3 +26,4 @@ docker run -d \
 -l "traefik.port"="5055" \
 --restart unless-stopped \
 lscr.io/linuxserver/overseerr
+docker network connect internal overseerr
