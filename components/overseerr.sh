@@ -12,6 +12,7 @@ docker run -d \
 -e TZ=America/Denver \
 -p 127.0.0.1:5055:5055 \
 -v $DOCKERPATH/overseerr/config:/config \
+-l "traefik.enable"="true" \
 -l "traefik.frontend.auth.forward.address"="http://oauth:4181" \
 -l "traefik.frontend.headers.SSLHost"="$DOMAINNAME" \
 -l "traefik.frontend.headers.SSLRedirect"="true" \
