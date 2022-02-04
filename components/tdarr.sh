@@ -13,7 +13,7 @@ docker run -d \
 -v $DOCKERPATH/tdarr/logs:/app/logs \
 -v /mnt/Media:/media \
 -v /temp:/temp \
--e "serverIP=10.100.100.5"
+-e "serverIP=10.100.100.5" \
 -e "serverPort=8266" \
 -e "webUIPort=8265" \
 -p 8265:8265 \
