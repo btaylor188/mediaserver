@@ -252,6 +252,19 @@ done
 
 ###############################
 
+######### Tdarr #############
+
+while true; do
+    read -p "Install Tdarr?" yn
+    case $yn in
+        [Yy]* ) sh ./components/tdarr.sh ; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+###############################
+
 echo "############################"
 echo "#######   All Done   #######"
 echo "############################"
