@@ -26,5 +26,5 @@ docker run -d \
 -l "traefik.frontend.rule"="Host:portainer.$DOMAINNAME" \
 -l "traefik.port"="9000" \
 --restart=always \
-portainer/portainer > portainer.log 2>&1
+portainer/portainer-ce > portainer.log 2>&1
 docker network connect internal portainer > portainer.log 2>&1
