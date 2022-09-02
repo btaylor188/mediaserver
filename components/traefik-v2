@@ -77,12 +77,6 @@ acme:
   email: brandon@brandon-taylor.net
   storage: /etc/traefik/acme/acme.json
   caServer: "https://acme-v02.api.letsencrypt.org/directory"
-  dnsChallenge:
-    provider: godaddy
-    delayBeforeCheck: 60
-  domains:
-    main: '*.interwebnet.net'
-    sans: 'interwebnet.net'
   httpChallenge:
     entryPoint: web
 
